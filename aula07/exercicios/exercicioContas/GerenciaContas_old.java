@@ -1,56 +1,58 @@
 package exercicios.exercicioContas;
 
-import java.util.ArrayList;
+
+import java.util.HashMap;
 
 public class GerenciaContas_old {
 
-    private ArrayList<Conta> listaContas;
+    private HashMap<Integer, Conta> hashContas;
 
     public GerenciaContas_old() {
-        listaContas = new ArrayList<>();
+        hashContas = new HashMap<>();
     }
 
     public void novaContaCorrente(int numeroConta, double valorConta) {
-        listaContas.add(new ContaCorrente(numeroConta, valorConta));
+        hashContas.put(numeroConta, new ContaCorrente(numeroConta, valorConta));
 
     }
 
     public void novaContaEspecial(int numeroConta, double valorConta, double limite) {
-        listaContas.add(new ContaEspecial(numeroConta, valorConta, limite));
+        hashContas.put(numeroConta, new ContaEspecial(numeroConta, valorConta, limite));
 
     }
 
     public void novaContaPoupanca(int numeroConta, double valorConta) {
-        listaContas.add(new ContaPoupanca(numeroConta, valorConta));
+        hashContas.put(numeroConta, new ContaPoupanca(numeroConta, valorConta));
 
     }
 
     public String depositar(int numeroConta, double deposito) {
-        for (Conta numero : listaContas) {
-            if (numero.getNumero() == numeroConta) {
-                numero.deposito(deposito);
-                return numero.getDados();
-            }
+        Conta contaEncontrada = hashContas.get(numeroConta);
+        if (contaEncontrada != null) {
+            contaEncontrada.deposito(deposito);
+            return contaEncontrada.getDados();
+        } else {
+            return "Conta não encontrada";
         }
-        return "Conta não encontrada";
     }
 
     public String saque(int numeroConta, double saque) {
-        for (Conta numero : listaContas) {
-            if (numero.getNumero() == numeroConta) {
-                numero.saque(saque);
-                return numero.getDados();
-            }
-        }
+        Conta contaEncontrada = hashContas.get(numeroConta);
+        if(contaEncontrada != null){
+                contaEncontrada.saque(saque);
+                return contaEncontrada.getDados();
+            }else{
+        
         return "Conta não encontrada";
+            }
     }
 
-    public String consultarConta(int numeroConta){
-        for (Conta numero : listaContas) {
-            if(numero.getNumero() == numeroConta){
-        return numero.getDados();
-            }
-        }   
+    public String consultarConta(int numeroConta) {
+        Conta contaEncontrada = hashContas.get(numeroConta);
+        if(contaEncontrada != null){
+                return contaEncontrada.getDados();
+            }else{
         return "Conta não encontrada";
     }
+}
 }

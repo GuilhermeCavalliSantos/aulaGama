@@ -1,6 +1,6 @@
 package exercicios.exercicioContas;
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class AppContas {
@@ -32,25 +32,21 @@ public class AppContas {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Informe o numero da conta...");
-                    numeroConta = teclado.nextInt();
-                    contas.novaContaCorrente(numeroConta, valorConta);
+                    System.out.println("O numero da sua conta é: " + contas.novaContaCorrente(valorConta));
                    
                     break;
 
                     case 2:
-                    System.out.println("Informe o numero da conta...");
-                    numeroConta= teclado.nextInt();
                     System.out.println("Informe o limite da conta...");
                     limite = teclado.nextDouble();
-                    contas.novaContaEspecial(numeroConta, valorConta, limite);
+                    System.out.println("O numero da sua conta é " + contas.novaContaEspecial(valorConta, limite));
+                    
                     
                     break;
 
                     case 3:
-                    System.out.println("Informe o numero da conta...");
-                    numeroConta= teclado.nextInt();
-                    contas.novaContaPoupanca(numeroConta, valorConta);    
+                    System.out.println("O numero da conta é " + contas.novaContaPoupanca(valorConta));  
+                     
                     break;
 
                     case 4:

@@ -5,23 +5,31 @@ import java.util.ArrayList;
 public class GerenciaContas {
 
     private ArrayList<Conta> listaContas;
+    private GerarNumero gerarNumero;
 
     public GerenciaContas() {
         listaContas = new ArrayList<>();
+        gerarNumero = new GerarNumero();
     }
 
-    public void novaContaCorrente(int numeroConta, double valorConta) {
+    public int novaContaCorrente(double valorConta) {
+        int numeroConta = gerarNumero.proximo();
         listaContas.add(new ContaCorrente(numeroConta, valorConta));
+        return numeroConta;
 
     }
 
-    public void novaContaEspecial(int numeroConta, double valorConta, double limite) {
+    public int novaContaEspecial(double valorConta, double limite) {
+        int numeroConta = gerarNumero.proximo();
         listaContas.add(new ContaEspecial(numeroConta, valorConta, limite));
+        return numeroConta;
 
     }
 
-    public void novaContaPoupanca(int numeroConta, double valorConta) {
+    public int novaContaPoupanca(double valorConta) {
+        int numeroConta = gerarNumero.proximo();
         listaContas.add(new ContaPoupanca(numeroConta, valorConta));
+        return numeroConta;
 
     }
 
