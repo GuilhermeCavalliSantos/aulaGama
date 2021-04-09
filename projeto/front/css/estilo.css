@@ -13,7 +13,9 @@ img{
 }
 
 #msgError{
-    color: red;
+    color:orange;
+    font-weight: bolder;
+    font-size: large;
     margin-bottom: 10px;
 }
 
@@ -26,6 +28,12 @@ text-decoration-line: underline;
 color: blue;
 font-weight: bold;
 }
+
+.underlinefront {
+    text-decoration-line: underline;
+    color: orange;
+    font-weight: bold;
+    }
 
 .jumbotron {
 background-color: rgb(59, 73, 204);
