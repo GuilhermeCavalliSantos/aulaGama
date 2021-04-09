@@ -15,7 +15,7 @@ public class Alarme {
     @Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_alarme")
-	private int id_alarme;
+	private int idAlarme;
 
     @Column(name="nome", length=100, nullable=false)
 	private String nome;
@@ -23,12 +23,12 @@ public class Alarme {
     @Column(name="descricao", length=200, nullable=false)
 	private String descricao;
 
-    public int getId_alarme() {
-        return id_alarme;
+    public int getIdAlarme() {
+        return idAlarme;
     }
 
-    public void setId_alarme(int id_alarme) {
-        this.id_alarme = id_alarme;
+    public void setIdAlarme(int idAlarme) {
+        this.idAlarme = idAlarme;
     }
 
     public String getNome() {
@@ -47,7 +47,7 @@ public class Alarme {
         this.descricao = descricao;
     }
 
-
+    
     
 	
 }
