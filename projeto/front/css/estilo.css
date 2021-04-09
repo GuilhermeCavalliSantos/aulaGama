@@ -1,5 +1,6 @@
 body,html{
     height: 100%;
+    background-color:rgba(211, 131, 66, 0.884)
 }
 
 .form-control{
@@ -18,4 +19,36 @@ img{
 
 .row{
     padding-top: 1em;
+}
+
+.underline {
+text-decoration-line: underline;
+color: blue;
+font-weight: bold;
+}
+
+.jumbotron {
+background-color: rgb(59, 73, 204);
+}
+
+.font{
+    color:blue;
+    font-weight: bold;
+}
+
+.border-black{
+
+    border:black solid 2px;
+
+}
+
+.table-overflow{
+    max-height: 300px;
+    overflow-y:auto
+}
+
+.titulo-tabela{
+    color:blue;
+    font-weight: bold;
+    font-size:medium;
 }

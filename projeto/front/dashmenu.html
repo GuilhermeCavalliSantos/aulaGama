@@ -13,21 +13,35 @@
     
 </head>
 <body onload = "validaLogin()">
-
-    <div id="user"></div>
-    <div id="foto"></div>
+    <div class="container col-12">
+    
+    <div> 
+    <h3 class="underline"> Itaumon - Dashboard de Eventos </h3>
+    <div>
     <button onclick="logout()">Logout</button>
+    </div>
+    </div>
+
+    <div class = "font" id="user"></div>
+    <div id="foto"></div>
+    
     
     <br>
 
+    <h5 class= "font"> Escolha qual relatório deseja executar:</h5>
+
+    <button onclick="gerarRelatorioEventos()">Gerar Relatorio Evento</button>
+    <button onclick="gerarRelatorioAlarme()">Gerar Relatório com todos os Alarmes</button>
+    <br>
+    <br>
     <input type="date" id="dataInicio">
     <input type="date" id="dataFinal">
-    <button onclick="gerarRelatorioEventos()">Gerar Relatorio Evento</button>
     <br>
-    <button onclick="gerarRelatorioAlarme()">Gerar Relatório com todos os Alarmes</button>
     
     <br>
-    <div id="tabela"></div>
+    <div id="tabela" class="table-overflow"></div>
+
+</div>
 
 </body>
 </html>

@@ -41,9 +41,9 @@ function tratarResposta(resposta){
 
 function exibirDadosAlarme(listaAlarmes){
     
-    let tabela = '<table class="table table-sm"> <tr> <th>nome</th> <th>descricao</th> </tr>'
+    let tabela = '<table class="table table-sm titulo-tabela border-black"> <tr class="table-dark font"> <th>Nome</th> <th>Descricao</th> </tr>'
     for(i=0; i< listaAlarmes.length; i++){
-        tabela = tabela +`<tr> <td>${listaAlarmes[i].nome} </td> <td> ${listaAlarmes[i].descricao} </td>   </tr>`
+        tabela = tabela +`<tr class="border-black"> <td>${listaAlarmes[i].nome} </td> <td> ${listaAlarmes[i].descricao} </td>   </tr>`
 
     }
 
@@ -90,10 +90,10 @@ function tratarRespostaEvento(resposta){
 
 function exibirDadosEvento(listaEventos){
     console.log(listaEventos);
-     let tabela = '<table class="table table-sm"> <tr> <th>data</th> <th>descricao</th> </tr>'
+     let tabela = '<table class="table table-sm font border-black"> <tr class="table-dark font"> <th>Data</th> <th>Alarme</th> <th> Equipamento </th> </tr>'
     for(i=0; i< listaEventos.length; i++){
         let databr= new Date(listaEventos[i].dataEvt).toLocaleDateString("pt-BR", {timeZone:'UTC'});
-        tabela = tabela +`<tr> <td>${listaEventos[i].dataEvt} </td> <td> ${listaEventos[i].alarme.nome} </td> <td> ${listaEventos[i].equipamento.hostname} </td> </tr>`
+        tabela = tabela +`<tr class="border-black"> <td>${databr} </td> <td> ${listaEventos[i].alarme.nome} </td> <td> ${listaEventos[i].equipamento.hostname} </td> </tr>`
 
     }
 
